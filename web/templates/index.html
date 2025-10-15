@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Аренда участков в Шилово</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <h1>Аренда участка в деревне Шилово</h1>
+    <p>В разработке...</p>
+    <div class="lands-container">
+        {% for land in lands %}
+        <div class="land-card">
+            <h3>Участок #{{ land.land_id }}</h3>
+
+            <p><strong>Стоимость:</strong>
+                {% if land.cost is defined and land.cost is not none %}
+                    {{ "{:,.0f}".format(land.cost|float) }} руб.
+                {% else %}
+                    Не указана
+                {% endif %}
+            </p>
+
+            <p><strong>Площадь:</strong> {{ land.square }} м²</p>
+
+            <p><strong>Статус:</strong>
+                <span class="status-{{ land.status }}">
+                    {% if land.status == 0 %}
+                        Свободен
+                    {% elif land.status == 1 %}
+                        Забронирован
+                    {% elif land.status == 2 %}
+                        Продан
+                    {% else %}
+                        Неизвестный статус
+                    {% endif %}
+                </span>
+            </p>
+
+            {% if land.land_data_url %}
+            <a href="{{ land.land_data_url }}" class="land-link" target="_blank">Подробнее об участке</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <p>Если хочется посмотреть что то:</p>
+    <a href="https://youtu.be/FuPvNK9CeQE?si=IRSnYx68Ms7dEI_u">СЦП САСАААААТЬ</a>
+    <a href="https://youtu.be/dQw4w9WgXcQ?si=You-5uWQHj4jOnI0">Рикролл</a>
+    <a href="https://youtu.be/QMMgjjGugHE?si=L55ZEDLPg2RRsfCw">Пасхалка</a>
+
+
+</body>
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</html>

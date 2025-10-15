@@ -1,0 +1,30 @@
+[
+    {
+        "land_id": "1",
+        "cost": 1000000,
+        "square": 50,
+        "land_data_url": "https://daun.com",
+        "status": 0
+    },
+    {
+        "land_id": "2",
+        "cost": 1500000,
+        "square": 55,
+        "land_data_url": "https://eblan.com",
+        "status": 1
+    },
+    {
+        "land_id": "3",
+        "cost": 2000000,
+        "square": 100,
+        "land_data_url": "https://huesos.com",
+        "status": 0
+    },
+    {
+        "land_id": "4",
+        "cost": 500000,
+        "square": 25,
+        "land_data_url": "https://lox.com",
+        "status": 0
+    }
+]
